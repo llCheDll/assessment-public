@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    build: ./flask_app
+    container_name: web
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/flask_app
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - 8080:80
+    links:
+      - web

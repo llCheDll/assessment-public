@@ -1,2 +1,2 @@
-url: http://0.0.0.0:5000/api/v1/candle
+url: http://localhost:8080/api/v1/candle
 data: client/data/sample.csv
