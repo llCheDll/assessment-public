@@ -24,13 +24,13 @@ def get_ohlc(filename):
     df = pd.DataFrame.from_csv(file_path)
     ohlc_df = df['price'].resample('1Min').ohlc()
 
-    jsonfiles = json.loads(ohlc_df.to_json(orient='index'))
+    json_data = json.loads(ohlc_df.to_json(orient='index'))
 
-    return jsonfiles
+    return json_data
 
 
 @app.route('/api/v1/candle', methods=['GET', 'POST'])
-def hello_world():
+def ohcl_app():
     if request.method == 'GET':
         resp = {"response": 'Success!'}
         return jsonify(resp)
